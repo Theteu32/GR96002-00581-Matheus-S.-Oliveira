@@ -31,5 +31,7 @@ public  void setSalarioBaseFuncionario(float SalarioBaseFuncionario){
 
 public String toString("(Nome: "+ nome + ", Quantidade de funcionarios: "+ quantidadeFuncionarios + ", Salario dos funcionarios: "+ salarioBaseFuncionario+ ")"){
 System.out.prinln
+
+public Loja(float gastos)
 }
 }
