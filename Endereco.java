@@ -7,54 +7,64 @@ public class Endereco {
     private String numero;
     private String complemento;
 
-    public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero, String complemento)
-
-    public String getNomeDaRua(){
-        return NomeDaRua;
+    public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero, String complemento){ 
+        this.nomeDaRua=nomeDaRua;
+        this.cidade=cidade;
+        this.estado=estado;
+        this.pais=pais;
+        this.cep=cep;
+        this.numero=numero;
+        this.complemento=complemento;
     }
-    public  void setNomeDaRua(String NomeDaRua){
-        NomeDaRua = NomeDaRua;
+    public String getNomeDaRua(){
+        return nomeDaRua;
+    }
+    public  void setNomeDaRua(String nomeDaRua){
+        this.nomeDaRua = nomeDaRua;
     } 
 
     public String getCidade(){
-        return Cidade;
+        return cidade;
     }
-    public  void setCidade(String Cidade){
-        Cidade = Cidade;
+    public  void setCidade(String cidade){
+        this.cidade = cidade;
     }
 
     public String getEstado(){
-        return Estado;
+        return estado;
     }
-    public  void setEstado(String Estado){
-        Estado = Estado;
+    public  void setEstado(String estado){
+        this.estado = estado;
     }
 
     public String getPais(){
-        return Pais;
+        return pais;
     }
-    public  void setPais(String Pais){
-        Pais = Pais;
+    public  void setPais(String pais){
+        this.pais = pais;
     }
 
     public String getCep(){
-        return Cep;
+        return cep;
     }
-    public  void setCep(String Cep){
-        Cep = Cep;
+    public  void setCep(String cep){
+        this.cep = cep;
     }
 
     public String getNumero(){
-        return Numero;
+        return numero;
     }
-    public  void setNumero(String Numero){
-        Numero = Numero;
+    public  void setNumero(String numero){
+        this.numero = numero;
     }
 
     public String getComplemento(){
-        return Complemento;
+        return complemento;
     }
-    public  void setNome(String Complemento){
-        Complemento = Complemento;
+    public  void setComplemento(String complemento){
+        this.complemento = complemento;
+    }
+    public String toString(){
+        return "(Nome da rua: "+ nomeDaRua + ", Cidade: "+ cidade + ", Estado: "+ estado + ", Pais: "+ pais + ", CEP: "+ cep + ", Numero: "+ numero + ", Complemento: "+ complemento +")";
     }
 }

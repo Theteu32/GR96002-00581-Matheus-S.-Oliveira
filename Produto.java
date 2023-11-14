@@ -3,20 +3,22 @@ public class Produto {
     private float preco;
 
 public Produto (String nome, float preco){
+    this.nome=nome;
+    this.preco=preco;
 }
 public String getNome(){
-    return Nome;
+    return nome;
 }
-public  void setNome(String Nome){
-    Nome = Nome;
+public  void setNome(String nome){
+    this.nome = nome;
 }
 public float getPreco(){
-    return Preco;
+    return preco;
 }
 public  void setPreco(float preco){
-    Preco = Preco;
+    this.preco = preco;
 }
 public String toString(){
-    return "(Nome: "+ nome + ", preço"+ preco + ")";
+    return "(Nome: "+ nome + ", Preço: "+ preco + ")";
 }
 }
