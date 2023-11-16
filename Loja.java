@@ -3,8 +3,8 @@ public class Loja
     private String nome;
     private int quantidadeFuncionarios;
     private float salarioBaseFuncionario;
-    private float gastosComSalario;
-    private String tamanhoDaLoja;
+    private double gastosComSalario;
+    private char tamanhoDaLoja;
 
 public Loja (String nome, int quantidadeFuncionarios, float salarioBaseFuncionario){
     this.nome=nome;
@@ -18,26 +18,26 @@ public Loja(String nome, int quantidadeFuncionarios){
     this.nome=nome;
     this.quantidadeFuncionarios=quantidadeFuncionarios;
     this.salarioBaseFuncionario = -1;
-    this.gastosComSalario=calcularGastosComSalario();
-    this.tamanhoDaLoja=calcularTamanhoDaLoja();
+    this.gastosComSalario = calcularGastosComSalario();
+    this.tamanhoDaLoja = calcularTamanhoDaLoja();
 }
-private float calcularGastosComSalario(){
+private double calcularGastosComSalario(){
     if (salarioBaseFuncionario >=0){
-        return quantidadeFuncionarios *salarioBaseFuncionario;
+        return quantidadeFuncionarios * salarioBaseFuncionario;
     }
     else {
         return 0;
     }
 }
-private String calcularTamanhoDaLoja(){
+private char calcularTamanhoDaLoja(){
     if (quantidadeFuncionarios <= 10){
-        return "P";
+        return 'P';
     }
     else if (quantidadeFuncionarios <= 30){
-        return "M";
+        return 'M';
     }
     else{
-        return "G";
+        return 'G';
     }
 }
 public String getNome(){
