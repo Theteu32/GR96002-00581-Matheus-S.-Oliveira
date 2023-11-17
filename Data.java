@@ -63,7 +63,7 @@ public boolean verificaAnoBissexto() {
     return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
 }
 
-private boolean validarData(int dia, int mes, int ano) {
+public boolean validarData(int dia, int mes, int ano) {
     if (mes < 1 || mes > 12 || dia < 1) {
         return false;
     }
@@ -76,4 +76,5 @@ private boolean validarData(int dia, int mes, int ano) {
 
     return dia <= diasPorMes[mes];
 }
+
 }

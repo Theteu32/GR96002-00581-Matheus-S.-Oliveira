@@ -3,34 +3,38 @@ public class Loja
     private String nome;
     private int quantidadeFuncionarios;
     private float salarioBaseFuncionario;
-    private double gastosComSalario;
-    private char tamanhoDaLoja;
+    private Data dataFundacao;
+    private Endereco endereco;
 
-public Loja (String nome, int quantidadeFuncionarios, float salarioBaseFuncionario){
+public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+public Loja (String nome, int quantidadeFuncionarios, float salarioBaseFuncionario, Endereco endereco, Data dataFundacao){
     this.nome=nome;
     this.quantidadeFuncionarios=quantidadeFuncionarios;
     this.salarioBaseFuncionario=salarioBaseFuncionario;
-    this.gastosComSalario=calcularGastosComSalario();
-    this.tamanhoDaLoja=calcularTamanhoDaLoja();
+    this.dataFundacao = dataFundacao;
 }
 
-public Loja(String nome, int quantidadeFuncionarios){
-    this.nome=nome;
-    this.quantidadeFuncionarios=quantidadeFuncionarios;
+public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao){
+    this.nome = nome;
+    this.quantidadeFuncionarios = quantidadeFuncionarios;
     this.salarioBaseFuncionario = -1;
-    this.gastosComSalario = calcularGastosComSalario();
-    this.tamanhoDaLoja = calcularTamanhoDaLoja();
+    this.endereco = endereco;
+    this.dataFundacao = dataFundacao;
 }
-private double calcularGastosComSalario(){
-    if (salarioBaseFuncionario >=0){
+
+public float gastosComSalario(){
+    if (salarioBaseFuncionario >= 0){
         return quantidadeFuncionarios * salarioBaseFuncionario;
     }
     else {
-        return 0;
+        return -1;
     }
 }
-private char calcularTamanhoDaLoja(){
-    if (quantidadeFuncionarios <= 10){
+public char tamanhoDaLoja(){
+    if (quantidadeFuncionarios < 10){
         return 'P';
     }
     else if (quantidadeFuncionarios <= 30){
@@ -40,6 +44,8 @@ private char calcularTamanhoDaLoja(){
         return 'G';
     }
 }
+
+
 public String getNome(){
     return nome;
 }
@@ -58,8 +64,23 @@ public float getSalarioBaseFuncionario(){
 public  void setSalarioBaseFuncionario(float salarioBaseFuncionario){
     this.salarioBaseFuncionario = salarioBaseFuncionario;
 }
+public Data getDataFundacao() {
+        return dataFundacao;
+    }
+public void setDataFundacao(Data dataFundacao) {
+        this.dataFundacao = dataFundacao;
+    }
+public Endereco getEndereco() {
+        return endereco;
+    }
 
 public String toString(){
-    return "(Nome: "+ nome + ", Quantidade de funcionarios: "+ quantidadeFuncionarios + ", Salario dos funcionarios: "+ salarioBaseFuncionario + ", Gasto com salarios: "+ gastosComSalario + ", Tamanho da loja: "+ tamanhoDaLoja +")";
+    return "(Nome: "+ nome +
+     ", Quantidade de funcionarios: "+ quantidadeFuncionarios + 
+     ", Salario dos funcionarios: "+ salarioBaseFuncionario + 
+     ", Gasto com salarios: "+ gastosComSalario() + 
+     ", Tamanho da loja: "+ tamanhoDaLoja() +
+     ", Endereço: "+ endereco+
+     ", Data da Fundação: "+ dataFundacao+ ")";
 }
 }
