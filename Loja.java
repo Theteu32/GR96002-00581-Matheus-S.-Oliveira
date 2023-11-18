@@ -2,28 +2,28 @@ public class Loja
 {
     private String nome;
     private int quantidadeFuncionarios;
-    private float salarioBaseFuncionario;
-    private Data dataFundacao;
+    private double salarioBaseFuncionario;
     private Endereco endereco;
+    private Data dataFundacao;
 
 
-public Loja (String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao){
+public Loja (String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao){
     this.nome=nome;
     this.quantidadeFuncionarios=quantidadeFuncionarios;
-    this.salarioBaseFuncionario=quantidadeFuncionarios;
-    this.dataFundacao = dataFundacao;
-    this.endereco = endereco;
-}
-
-public Loja(String nome, int quantidadeFuncionarios,float salarioBaseFuncionario, Endereco endereco, Data dataFundacao){
-    this.nome = nome;
-    this.quantidadeFuncionarios = quantidadeFuncionarios;
     this.salarioBaseFuncionario = salarioBaseFuncionario;
     this.endereco = endereco;
     this.dataFundacao = dataFundacao;
 }
 
-public float gastosComSalario(){
+public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao){
+    this.nome = nome;
+    this.quantidadeFuncionarios = quantidadeFuncionarios;
+    this.salarioBaseFuncionario = -1;
+    this.endereco = endereco;
+    this.dataFundacao = dataFundacao;
+}
+
+public double gastosComSalario(){
     if (salarioBaseFuncionario >= 0){
         return quantidadeFuncionarios * salarioBaseFuncionario;
     }
@@ -56,10 +56,10 @@ public int getQuantidadeFuncionarios(){
 public  void setQuantidadeFuncionarios(int quantidadeFuncionarios){
     this.quantidadeFuncionarios = quantidadeFuncionarios;
 }
-public float getSalarioBaseFuncionario(){
+public double getSalarioBaseFuncionario(){
     return salarioBaseFuncionario;
 }
-public  void setSalarioBaseFuncionario(float salarioBaseFuncionario){
+public  void setSalarioBaseFuncionario(double salarioBaseFuncionario){
     this.salarioBaseFuncionario = salarioBaseFuncionario;
 }
 public Data getDataFundacao() {
