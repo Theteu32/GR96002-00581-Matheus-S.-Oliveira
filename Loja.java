@@ -6,21 +6,19 @@ public class Loja
     private Data dataFundacao;
     private Endereco endereco;
 
-public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
 
-public Loja (String nome, int quantidadeFuncionarios, float salarioBaseFuncionario, Endereco endereco, Data dataFundacao){
+public Loja (String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao){
     this.nome=nome;
     this.quantidadeFuncionarios=quantidadeFuncionarios;
-    this.salarioBaseFuncionario=salarioBaseFuncionario;
+    this.salarioBaseFuncionario=quantidadeFuncionarios;
     this.dataFundacao = dataFundacao;
+    this.endereco = endereco;
 }
 
-public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao){
+public Loja(String nome, int quantidadeFuncionarios,float salarioBaseFuncionario, Endereco endereco, Data dataFundacao){
     this.nome = nome;
     this.quantidadeFuncionarios = quantidadeFuncionarios;
-    this.salarioBaseFuncionario = -1;
+    this.salarioBaseFuncionario = salarioBaseFuncionario;
     this.endereco = endereco;
     this.dataFundacao = dataFundacao;
 }
@@ -72,6 +70,9 @@ public void setDataFundacao(Data dataFundacao) {
     }
 public Endereco getEndereco() {
         return endereco;
+    }
+public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
 public String toString(){

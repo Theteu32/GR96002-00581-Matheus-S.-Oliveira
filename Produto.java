@@ -42,7 +42,9 @@ public void setDataValidade(Data dataValidade) {
 
 public String toString(){
     return "(Nome: "+ nome + 
-    ", Preço: "+ preco +  
+    ", Preço: "+ preco + 
+    ", Data de validade:"+ dataValidade+ 
     ")";
+    
 }
 }
