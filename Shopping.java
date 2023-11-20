@@ -36,7 +36,7 @@ public int quantidadeLojasPorTipo(String tipoLoja){
     int quantidade = 0;
 
     for (Loja loja : lojas){
-        if (loja != null && loja.getClass().getSimpleName().equals(tipoLoja)){
+        if (loja != null && loja.getClass().getSimpleName().equalsIgnoreCase(tipoLoja)){
             quantidade ++;
         }
     }
